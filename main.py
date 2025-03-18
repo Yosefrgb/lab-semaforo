@@ -22,7 +22,7 @@ pare=0
 global temperatura
 temperatura=0
 
-def interrupcion(Pin):
+def interrupcion_pare(Pin):
     global pare
     print("Entre a la funcion interrupcion")
     pare=1
@@ -32,8 +32,8 @@ def interrupcion(Pin):
     print("Entre a la funcion interrupcion")
     temperatura=1
 
-pare=Pin(13,Pin.IN)
-pare.irq(trigger=Pin.IRQ_RISING, handler=interrupcion)
+pare=Pin(33,Pin.IN)
+pare.irq(trigger=Pin.IRQ_RISING, handler=interrupcion_pare)
 
 GPIO_SET=const(0x3FF44004)
 
